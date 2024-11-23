@@ -1,4 +1,3 @@
-import { AuthService } from '@/api/auth/auth.service';
 import { IS_PUBLIC, IS_REFRESH_TOKEN, ValidationError } from '@/constants';
 import { ValidationException } from '@/exceptions/validation.exception';
 import {
@@ -9,6 +8,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Request as ExpressRequest } from 'express';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

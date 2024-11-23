@@ -1,11 +1,11 @@
-import { AuthGuard } from '@/api/auth/auth.guard';
-import { AuthService } from '@/api/auth/auth.service';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory, Reflector } from '@nestjs/core';
 import compression from 'compression';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
+import { AuthGuard } from './modules/auth/auth.guard';
+import { AuthService } from './modules/auth/auth.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

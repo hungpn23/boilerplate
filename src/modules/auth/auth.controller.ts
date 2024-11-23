@@ -1,4 +1,3 @@
-import { AuthService } from '@/api/auth/auth.service';
 import { JwtPayload } from '@/decorators/jwt-payload.decorator';
 import { Public } from '@/decorators/public.decorator';
 import { RefreshToken } from '@/decorators/refresh-token.decorator';
@@ -10,6 +9,7 @@ import {
   RefreshResDto,
   RegisterResDto,
 } from './auth.dto';
+import { AuthService } from './auth.service';
 import { JwtPayloadType, JwtRefreshPayloadType } from './auth.type';
 
 @Controller('/auth')
@@ -18,14 +18,14 @@ export class AuthController {
 
   @Public()
   @SerializeOptions({ type: RegisterResDto })
-  @Post('/register/email')
+  @Post('/register')
   async register(@Body() dto: AuthReqDto): Promise<RegisterResDto> {
     return await this.authService.register(dto);
   }
 
   @Public()
   @SerializeOptions({ type: LoginResDto })
-  @Post('/login/email')
+  @Post('/login')
   async login(@Body() dto: AuthReqDto): Promise<LoginResDto> {
     return await this.authService.login(dto);
   }

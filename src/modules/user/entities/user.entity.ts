@@ -1,4 +1,3 @@
-import { SessionEntity } from '@/api/user/entities/session.entity';
 import { AbstractEntity } from '@/entities/abstract.entity';
 import { Uuid } from '@/types';
 import argon2 from 'argon2';
@@ -11,6 +10,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { SessionEntity } from './session.entity';
 
 @Expose()
 @Entity('user')

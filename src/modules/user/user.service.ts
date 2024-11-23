@@ -1,6 +1,6 @@
-import { UserEntity } from '@/api/user/entities/user.entity';
 import { Injectable } from '@nestjs/common';
 import { JwtPayloadType } from '../auth/auth.type';
+import { UserEntity } from './entities/user.entity';
 
 @Injectable()
 export class UserService {

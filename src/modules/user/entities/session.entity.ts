@@ -1,4 +1,3 @@
-import { UserEntity } from '@/api/user/entities/user.entity';
 import { AbstractEntity } from '@/entities/abstract.entity';
 import { Uuid } from '@/types';
 import { Expose } from 'class-transformer';
@@ -9,6 +8,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { UserEntity } from './user.entity';
 
 @Entity('session')
 export class SessionEntity extends AbstractEntity {

@@ -1,4 +1,3 @@
-import { ApiModule } from '@/api/api.module';
 import configuration from '@/config/configuration';
 import { ThrottlerConfig } from '@/config/throttler.config';
 import { TypeormConfig } from '@/config/typeorm.config';
@@ -9,6 +8,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { AppController } from './app.controller';
+import { Modules } from './modules';
 
 @Module({
   imports: [
@@ -32,7 +32,7 @@ import { AppController } from './app.controller';
 
     CacheModule.register({ isGlobal: true }),
 
-    ApiModule,
+    Modules,
   ],
   controllers: [AppController],
 })

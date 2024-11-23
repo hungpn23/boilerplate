@@ -1,5 +1,3 @@
-import { SessionEntity } from '@/api/user/entities/session.entity';
-import { UserEntity } from '@/api/user/entities/user.entity';
 import { ValidationError } from '@/constants';
 import { ValidationException } from '@/exceptions/validation.exception';
 import { Uuid } from '@/types';
@@ -12,6 +10,8 @@ import argon2 from 'argon2';
 import { Cache } from 'cache-manager';
 import crypto from 'crypto';
 import { Repository } from 'typeorm';
+import { SessionEntity } from '../user/entities/session.entity';
+import { UserEntity } from '../user/entities/user.entity';
 import { AuthReqDto } from './auth.dto';
 import { JwtPayloadType, JwtRefreshPayloadType } from './auth.type';
 
