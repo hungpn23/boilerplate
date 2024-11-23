@@ -30,7 +30,7 @@ export abstract class AbstractEntity extends BaseEntity {
   @DeleteDateColumn({
     name: 'deleted_at',
     type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP(6)',
+    default: null,
   })
   deletedAt: Date;
 
@@ -51,7 +51,7 @@ export abstract class AbstractEntity extends BaseEntity {
   @Order(9999)
   @Column({
     name: 'deleted_by',
-    default: SYSTEM,
+    default: null,
   })
   deletedBy: string;
 
